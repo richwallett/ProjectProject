@@ -10,9 +10,6 @@ Todo::Application.routes.draw do
     resources :projects
   end
   resources :users
-  resources :users do
-    resources :teams
-  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

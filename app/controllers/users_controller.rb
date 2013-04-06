@@ -13,9 +13,8 @@ class UsersController < ApplicationController
   
   def create 
     @user = User.new(params[:user])
-    @user.project_id = params[:project_id]
     if @user.save
-      redirect_to project_path(@user.project)
+      redirect_to user_path(@user)
     else
       render :new
     end
@@ -23,5 +22,11 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
+  end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_url
   end
 end

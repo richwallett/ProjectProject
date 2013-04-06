@@ -9,6 +9,8 @@
 #
 
 class User < ActiveRecord::Base
-  # attr_accessible :title, :body
-  has_and_belongs_to_many :teams
+  attr_accessible :name
+  attr_accessible :teams_attributes
+  has_many :team_memberships
+  has_many :teams, :through => :team_memberships
 end
