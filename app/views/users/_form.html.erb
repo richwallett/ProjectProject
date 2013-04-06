@@ -1,0 +1,14 @@
+<%= form_for(@user) do |f| %>
+<ul>
+<% @user.errors.full_messages.each do |user| %>
+  <li><%= error %></li>
+<% end %>
+</ul>
+  <p>
+    <%= f.label :name, "Team Name:" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

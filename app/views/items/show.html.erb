@@ -1,0 +1,11 @@
+<h1><%= "#{@item.title}" %></h1>
+<ul>
+  <p><%= "Details: #{@item.description}" %></p>
+  <br>
+	 <%= radio_button_tag(:complete, "Complete") %>
+	 <%= label_tag(:complete, "Complete", :value => true) %>
+	 <%= radio_button_tag(:complete, "Incomplete") %>
+	 <%= label_tag(:complete, "Incomplete", :value => false) %>
+  <br>
+  <p><%= project_link @item.project %></p>
+</ul>

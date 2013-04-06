@@ -1,0 +1,10 @@
+<h1>All Items</h1>
+
+<ul id="items">
+  <% @items.each do |item| %>
+    <li>
+      <%= link_to "#{item.title}", item_path(item) %>
+    </li>
+  <% end %>
+  <p><%= link_to "<< Project", item_url(@item)%></p>
+</ul>

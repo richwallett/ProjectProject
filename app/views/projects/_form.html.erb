@@ -1,0 +1,21 @@
+<%= form_for([@team, @project]) do |f| %>
+<ul>
+<% @project.errors.full_messages.each do |project| %>
+  <li><%= error %></li>
+<% end %>
+</ul>
+  <p>
+    <%= f.label :title, "Project Title:" %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description, "Description:" %><br />
+    <%= f.text_field :description %>
+  </p>
+  <b>Project</b>
+  <%= f.collection_select(:team_id, Team.all, :id, :name) %>
+  <br>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,24 @@
+<h1>Create a New Item</h1>
+<p><%= "Project: #{@item.project}" %></p>
+
+<%= form_for(@item) do |f| %>
+
+  <p>
+    <%= f.label :title, "Project Title:" %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description, "Description:" %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :completed, "Complete?:" %><br />
+    <%= f.text_field :completed %>
+  </p>
+  <p>
+	  <%= f.collection_select :project_id, Album.all, :id, :title %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

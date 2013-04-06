@@ -1,0 +1,19 @@
+<h1><%= "#{@team.name}" %></h1>
+<br>
+<ul>
+<h3><%= "Current Projects" %></h3>
+<br>
+<ul>
+  <% @team.projects.each do |project| %>
+  	 <li><%= project_link(project) %></li>
+	<% end %>
+</ul>
+<br>
+<h3><%= "Add New Project" %></h3>
+<%= render partial: 'projects/form' %>
+  <%= link_to "edit", edit_team_path(@team) %>
+  <%= link_to "delete", team_url(@team), method: :delete, confirm: "Really delete the team?"
+ %>
+  <p><%= link_to "<< Teams", teams_url %></p>
+</ul>
+</ul>

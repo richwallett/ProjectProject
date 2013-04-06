@@ -1,0 +1,16 @@
+<%= form_for(@team) do |f| %>
+<ul>
+<% @team.errors.full_messages.each do |team| %>
+  <li><%= error %></li>
+<% end %>
+</ul>
+  <p>
+    <%= f.label :name, "Team Name:" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  
+    <p><%= link_to "<< Teams", teams_url %></p>
+<% end %>

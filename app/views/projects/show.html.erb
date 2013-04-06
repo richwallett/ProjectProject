@@ -1,0 +1,20 @@
+<h1><%= "#{@project.title}" %></h1>
+<%= "Details: #{@project.description}" %>
+<ul>
+<l>
+	<br>
+<h3>Items</h3>
+</l>
+<ul>
+  <% @project.items.each do |item| %>
+  	 <li><%= item_link(item) %></li>
+	<% end %>
+</ul>
+<%= render partial: 'items/form' %>
+  <%= link_to "edit", edit_project_path(@project) %>
+  <%= link_to "delete", project_url(@project), method: :delete, confirm: "Really delete the project?"
+ %>
+   <p><%= team_link @project.team %></p>
+  <p><%= link_to "<< Teams", teams_url %></p>
+</ul>
+</ul>
