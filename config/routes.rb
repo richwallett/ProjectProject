@@ -1,4 +1,5 @@
 Todo::Application.routes.draw do
+  # REV: Could probably use some excepts/only's in here
   root :to => 'teams#index'
   resources :projects
   resources :items
